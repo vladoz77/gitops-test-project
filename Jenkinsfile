@@ -18,15 +18,13 @@ pipeline{
     stage("test variables"){
         steps{
             script{
-                sh """
-                    "git config user.email odiadevops@gmail.com"
-                    "git config user.name devopsodia"
-                    "cat manifest/deployment.yaml"
-                    "sed -i 'vladoz77/cicd-test-project.*+1vladoz77/cicd-test-project:${TAG}+g' manifest/deployment.yaml"
-                    "cat manifest/deployment.yaml"
-                    "git add ."
-                    "git commit -m 'Done by Jenkins Job update manifest: ${TAG}'"
-                """
+                sh "git config user.email odiadevops@gmail.com"
+                sh "git config user.name devopsodia"
+                sh "cat manifest/deployment.yaml"
+                sh "sed -i 'vladoz77/cicd-test-project.*+1vladoz77/cicd-test-project:${TAG}+g' manifest/deployment.yaml"
+                sh "cat manifest/deployment.yaml"
+                sh "git add ."
+                sh "git commit -m 'Done by Jenkins Job update manifest: ${TAG}'"
                 
                 withCredentials([string(credentialsId: 'githab-token', variable: 'github-pass')]) {
                     sh "git push https://github.com/vladoz77/gitops-test-project main"
