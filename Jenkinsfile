@@ -22,7 +22,7 @@ pipeline{
                 sh "git config user.name devopsodia"
                 sh "cat manifest/deployment.yaml"
                 sh "sed -i 's+vladoz77/cicd-test-project.*+1vladoz77/cicd-test-project:${TAG}+g' manifest/deployment.yaml"
-                sh "manifest/deployment.yaml"
+                sh "cat manifest/deployment.yaml"
                 sh "git add ."
                 sh "git commit -m 'Done by Jenkins Job update manifest: ${TAG}'"
                 sh "git push origin main"
