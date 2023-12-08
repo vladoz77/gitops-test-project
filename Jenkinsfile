@@ -26,7 +26,7 @@ pipeline{
                 sh "git add ."
                 sh "git commit -m 'Done by Jenkins Job update manifest: ${TAG}'"
                 
-                withCredentials([string(credentialsId: 'githab-token', variable: 'github-pass')]) {
+                withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
                     sh "git push https://github.com/vladoz77/gitops-test-project main"
                 }
             }
