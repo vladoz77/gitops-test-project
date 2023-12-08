@@ -1,6 +1,8 @@
 pipeline{
   agent "any"
-  
+  environment{
+    TAG = "1.2.3"
+  }
   stages{
     stage("Clean-workspace"){
         steps{
@@ -15,7 +17,7 @@ pipeline{
 
     stage("test variables"){
         steps{
-            sh "echo build number is env.TAG"
+            sh "echo build number is $TAG"
         }
     }
   }
