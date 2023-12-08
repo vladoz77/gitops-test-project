@@ -17,7 +17,7 @@ spec:
       containers:
       - image: vladoz77/cicd-test-project:latest
         name: cicd-test-project
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         resources:
           requests:
             memory: 100Mi
