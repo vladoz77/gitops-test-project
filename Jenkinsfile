@@ -15,7 +15,7 @@ pipeline{
 
     stage("test variables"){
         steps{
-            sh echo "build number is ${TAG}"
+            sh "echo build number is env.TAG"
         }
     }
   }
