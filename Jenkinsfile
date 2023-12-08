@@ -12,3 +12,6 @@ pipeline{
           git branch: 'main', url: 'https://github.com/vladoz77/gitops-test-project'
         }
     }
+  }
+}
+
