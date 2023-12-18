@@ -15,7 +15,7 @@ spec:
         app: cicd-app
     spec:
       containers:
-      - image: vladoz77/cicd-test-project:1.0.0-30
+      - image: vladoz77/cicd-test-project:1.0.0-31
         name: cicd-test-project
         imagePullPolicy: Always
         resources:
